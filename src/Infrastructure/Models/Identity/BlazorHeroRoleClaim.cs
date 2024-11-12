@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace SecureDoc.Infrastructure.Models.Identity
 {
-    public class BlazorHeroRoleClaim : IdentityRoleClaim<string>, IAuditableEntity<int>
+    public class SecureDocRoleClaim : IdentityRoleClaim<string>, IAuditableEntity<int>
     {
         public string Description { get; set; }
         public string Group { get; set; }
@@ -12,13 +12,13 @@ namespace SecureDoc.Infrastructure.Models.Identity
         public DateTime CreatedOn { get; set; }
         public string LastModifiedBy { get; set; }
         public DateTime? LastModifiedOn { get; set; }
-        public virtual BlazorHeroRole Role { get; set; }
+        public virtual SecureDocRole Role { get; set; }
 
-        public BlazorHeroRoleClaim() : base()
+        public SecureDocRoleClaim() : base()
         {
         }
 
-        public BlazorHeroRoleClaim(string roleClaimDescription = null, string roleClaimGroup = null) : base()
+        public SecureDocRoleClaim(string roleClaimDescription = null, string roleClaimGroup = null) : base()
         {
             Description = roleClaimDescription;
             Group = roleClaimGroup;

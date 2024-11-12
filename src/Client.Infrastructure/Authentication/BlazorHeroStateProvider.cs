@@ -13,12 +13,12 @@ using SecureDoc.Shared.Constants.Storage;
 
 namespace SecureDoc.Client.Infrastructure.Authentication
 {
-    public class BlazorHeroStateProvider : AuthenticationStateProvider
+    public class SecureDocStateProvider : AuthenticationStateProvider
     {
         private readonly HttpClient _httpClient;
         private readonly ILocalStorageService _localStorage;
 
-        public BlazorHeroStateProvider(
+        public SecureDocStateProvider(
             HttpClient httpClient,
             ILocalStorageService localStorage)
         {

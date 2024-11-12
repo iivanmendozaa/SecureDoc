@@ -68,7 +68,7 @@ namespace SecureDoc.Client.Shared
 
         protected override async Task OnInitializedAsync()
         {
-            _currentTheme = BlazorHeroTheme.DefaultTheme;
+            _currentTheme = SecureDocTheme.DefaultTheme;
             _currentTheme = await _clientPreferenceManager.GetCurrentThemeAsync();
             _rightToLeft = await _clientPreferenceManager.IsRTL();
             _interceptor.RegisterEvent();
@@ -162,8 +162,8 @@ namespace SecureDoc.Client.Shared
         {
             bool isDarkMode = await _clientPreferenceManager.ToggleDarkModeAsync();
             _currentTheme = isDarkMode
-                ? BlazorHeroTheme.DefaultTheme
-                : BlazorHeroTheme.DarkTheme;
+                ? SecureDocTheme.DefaultTheme
+                : SecureDocTheme.DarkTheme;
         }
 
         public void Dispose()

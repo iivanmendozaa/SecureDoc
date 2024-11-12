@@ -23,7 +23,7 @@ namespace SecureDoc.Client.Extensions
 {
     public static class WebAssemblyHostBuilderExtensions
     {
-        private const string ClientName = "BlazorHero.API";
+        private const string ClientName = "SecureDoc.API";
 
         public static WebAssemblyHostBuilder AddRootComponents(this WebAssemblyHostBuilder builder)
         {
@@ -55,8 +55,8 @@ namespace SecureDoc.Client.Extensions
                 })
                 .AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies())
                 .AddScoped<ClientPreferenceManager>()
-                .AddScoped<BlazorHeroStateProvider>()
-                .AddScoped<AuthenticationStateProvider, BlazorHeroStateProvider>()
+                .AddScoped<SecureDocStateProvider>()
+                .AddScoped<AuthenticationStateProvider, SecureDocStateProvider>()
                 .AddManagers()
                 .AddExtendedAttributeManagers()
                 .AddTransient<AuthenticationHeaderHandler>()

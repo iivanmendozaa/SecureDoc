@@ -8,8 +8,8 @@ namespace SecureDoc.Infrastructure.Mappings
     {
         public UserProfile()
         {
-            CreateMap<UserResponse, BlazorHeroUser>().ReverseMap();
-            CreateMap<ChatUserResponse, BlazorHeroUser>().ReverseMap()
+            CreateMap<UserResponse, SecureDocUser>().ReverseMap();
+            CreateMap<ChatUserResponse, SecureDocUser>().ReverseMap()
                 .ForMember(dest => dest.EmailAddress, source => source.MapFrom(source => source.Email)); //Specific Mapping
         }
     }

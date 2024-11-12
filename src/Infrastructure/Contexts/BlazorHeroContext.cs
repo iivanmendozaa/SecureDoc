@@ -13,19 +13,19 @@ using SecureDoc.Domain.Entities.Misc;
 
 namespace SecureDoc.Infrastructure.Contexts
 {
-    public class BlazorHeroContext : AuditableContext
+    public class SecureDocContext : AuditableContext
     {
         private readonly ICurrentUserService _currentUserService;
         private readonly IDateTimeService _dateTimeService;
 
-        public BlazorHeroContext(DbContextOptions<BlazorHeroContext> options, ICurrentUserService currentUserService, IDateTimeService dateTimeService)
+        public SecureDocContext(DbContextOptions<SecureDocContext> options, ICurrentUserService currentUserService, IDateTimeService dateTimeService)
             : base(options)
         {
             _currentUserService = currentUserService;
             _dateTimeService = dateTimeService;
         }
 
-        public DbSet<ChatHistory<BlazorHeroUser>> ChatHistories { get; set; }
+        public DbSet<ChatHistory<SecureDocUser>> ChatHistories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Document> Documents { get; set; }
@@ -68,7 +68,7 @@ namespace SecureDoc.Infrastructure.Contexts
                 property.SetColumnType("decimal(18,2)");
             }
             base.OnModelCreating(builder);
-            builder.Entity<ChatHistory<BlazorHeroUser>>(entity =>
+            builder.Entity<ChatHistory<SecureDocUser>>(entity =>
             {
                 entity.ToTable("ChatHistory");
 
@@ -82,13 +82,13 @@ namespace SecureDoc.Infrastructure.Contexts
                     .HasForeignKey(d => d.ToUserId)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
-            builder.Entity<BlazorHeroUser>(entity =>
+            builder.Entity<SecureDocUser>(entity =>
             {
                 entity.ToTable(name: "Users", "Identity");
                 entity.Property(e => e.Id).ValueGeneratedOnAdd();
             });
 
-            builder.Entity<BlazorHeroRole>(entity =>
+            builder.Entity<SecureDocRole>(entity =>
             {
                 entity.ToTable(name: "Roles", "Identity");
             });
@@ -107,7 +107,7 @@ namespace SecureDoc.Infrastructure.Contexts
                 entity.ToTable("UserLogins", "Identity");
             });
 
-            builder.Entity<BlazorHeroRoleClaim>(entity =>
+            builder.Entity<SecureDocRoleClaim>(entity =>
             {
                 entity.ToTable(name: "RoleClaims", "Identity");
 

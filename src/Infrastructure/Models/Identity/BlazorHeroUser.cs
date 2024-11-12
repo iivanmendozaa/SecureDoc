@@ -8,7 +8,7 @@ using SecureDoc.Application.Models.Chat;
 
 namespace SecureDoc.Infrastructure.Models.Identity
 {
-    public class BlazorHeroUser : IdentityUser<string>, IChatUser, IAuditableEntity<string>
+    public class SecureDocUser : IdentityUser<string>, IChatUser, IAuditableEntity<string>
     {
         public string FirstName { get; set; }
 
@@ -30,13 +30,13 @@ namespace SecureDoc.Infrastructure.Models.Identity
         public bool IsActive { get; set; }
         public string RefreshToken { get; set; }
         public DateTime RefreshTokenExpiryTime { get; set; }
-        public virtual ICollection<ChatHistory<BlazorHeroUser>> ChatHistoryFromUsers { get; set; }
-        public virtual ICollection<ChatHistory<BlazorHeroUser>> ChatHistoryToUsers { get; set; }
+        public virtual ICollection<ChatHistory<SecureDocUser>> ChatHistoryFromUsers { get; set; }
+        public virtual ICollection<ChatHistory<SecureDocUser>> ChatHistoryToUsers { get; set; }
 
-        public BlazorHeroUser()
+        public SecureDocUser()
         {
-            ChatHistoryFromUsers = new HashSet<ChatHistory<BlazorHeroUser>>();
-            ChatHistoryToUsers = new HashSet<ChatHistory<BlazorHeroUser>>();
+            ChatHistoryFromUsers = new HashSet<ChatHistory<SecureDocUser>>();
+            ChatHistoryToUsers = new HashSet<ChatHistory<SecureDocUser>>();
         }
     }
 }

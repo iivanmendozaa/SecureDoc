@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SecureDoc.Infrastructure.Migrations
 {
-    public partial class AddBlazorHeroRole : Migration
+    public partial class AddSecureDocRole : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

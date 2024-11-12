@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Shared\Components\BlazorHeroLogo.razor" />
+    <Content Remove="Shared\Components\SecureDocLogo.razor" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,15 +28,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Shared\Components\BlazorHeroLogo.razor" />
+    <UpToDateCheckInput Remove="Shared\Components\SecureDocLogo.razor" />
   </ItemGroup>
 
   <ItemGroup>
-    <_ContentIncludedByDefault Remove="Shared\Components\BlazorHeroLogo.razor" />
+    <_ContentIncludedByDefault Remove="Shared\Components\SecureDocLogo.razor" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Shared\Components\BlazorHeroLogo.razor" />
+    <None Include="Shared\Components\SecureDocLogo.razor" />
   </ItemGroup>
 
   <ItemGroup>

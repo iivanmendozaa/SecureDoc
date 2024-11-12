@@ -2,7 +2,7 @@
 
 namespace SecureDoc.Client.Infrastructure.Settings
 {
-    public class BlazorHeroTheme
+    public class SecureDocTheme
     {
         private static Typography DefaultTypography = new Typography()
         {

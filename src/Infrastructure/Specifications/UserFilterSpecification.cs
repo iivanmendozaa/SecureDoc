@@ -3,7 +3,7 @@ using SecureDoc.Application.Specifications.Base;
 
 namespace SecureDoc.Infrastructure.Specifications
 {
-    public class UserFilterSpecification : HeroSpecification<BlazorHeroUser>
+    public class UserFilterSpecification : HeroSpecification<SecureDocUser>
     {
         public UserFilterSpecification(string searchString)
         {

@@ -9,9 +9,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace SecureDoc.Infrastructure.Migrations
 {
-    [DbContext(typeof(BlazorHeroContext))]
-    [Migration("20210528104232_AddBlazorHeroRoleClaim")]
-    partial class AddBlazorHeroRoleClaim
+    [DbContext(typeof(SecureDocContext))]
+    [Migration("20210528104232_AddSecureDocRoleClaim")]
+    partial class AddSecureDocRoleClaim
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace SecureDoc.Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("SecureDoc.Application.Models.Chat.ChatHistory<SecureDoc.Infrastructure.Models.Identity.BlazorHeroUser>", b =>
+            modelBuilder.Entity("SecureDoc.Application.Models.Chat.ChatHistory<SecureDoc.Infrastructure.Models.Identity.SecureDocUser>", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -198,7 +198,7 @@ namespace SecureDoc.Infrastructure.Migrations
                     b.ToTable("AuditTrails");
                 });
 
-            modelBuilder.Entity("SecureDoc.Infrastructure.Models.Identity.BlazorHeroRole", b =>
+            modelBuilder.Entity("SecureDoc.Infrastructure.Models.Identity.SecureDocRole", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -240,7 +240,7 @@ namespace SecureDoc.Infrastructure.Migrations
                     b.ToTable("Roles", "Identity");
                 });
 
-            modelBuilder.Entity("SecureDoc.Infrastructure.Models.Identity.BlazorHeroRoleClaim", b =>
+            modelBuilder.Entity("SecureDoc.Infrastructure.Models.Identity.SecureDocRoleClaim", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -282,7 +282,7 @@ namespace SecureDoc.Infrastructure.Migrations
                     b.ToTable("RoleClaims", "Identity");
                 });
 
-            modelBuilder.Entity("SecureDoc.Infrastructure.Models.Identity.BlazorHeroUser", b =>
+            modelBuilder.Entity("SecureDoc.Infrastructure.Models.Identity.SecureDocUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -463,13 +463,13 @@ namespace SecureDoc.Infrastructure.Migrations
                     b.ToTable("UserTokens", "Identity");
                 });
 
-            modelBuilder.Entity("SecureDoc.Application.Models.Chat.ChatHistory<SecureDoc.Infrastructure.Models.Identity.BlazorHeroUser>", b =>
+            modelBuilder.Entity("SecureDoc.Application.Models.Chat.ChatHistory<SecureDoc.Infrastructure.Models.Identity.SecureDocUser>", b =>
                 {
-                    b.HasOne("SecureDoc.Infrastructure.Models.Identity.BlazorHeroUser", "FromUser")
+                    b.HasOne("SecureDoc.Infrastructure.Models.Identity.SecureDocUser", "FromUser")
                         .WithMany("ChatHistoryFromUsers")
                         .HasForeignKey("FromUserId");
 
-                    b.HasOne("SecureDoc.Infrastructure.Models.Identity.BlazorHeroUser", "ToUser")
+                    b.HasOne("SecureDoc.Infrastructure.Models.Identity.SecureDocUser", "ToUser")
                         .WithMany("ChatHistoryToUsers")
                         .HasForeignKey("ToUserId");
 
@@ -489,9 +489,9 @@ namespace SecureDoc.Infrastructure.Migrations
                     b.Navigation("Brand");
                 });
 
-            modelBuilder.Entity("SecureDoc.Infrastructure.Models.Identity.BlazorHeroRoleClaim", b =>
+            modelBuilder.Entity("SecureDoc.Infrastructure.Models.Identity.SecureDocRoleClaim", b =>
                 {
-                    b.HasOne("SecureDoc.Infrastructure.Models.Identity.BlazorHeroRole", null)
+                    b.HasOne("SecureDoc.Infrastructure.Models.Identity.SecureDocRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -500,7 +500,7 @@ namespace SecureDoc.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("SecureDoc.Infrastructure.Models.Identity.BlazorHeroUser", null)
+                    b.HasOne("SecureDoc.Infrastructure.Models.Identity.SecureDocUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -509,7 +509,7 @@ namespace SecureDoc.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("SecureDoc.Infrastructure.Models.Identity.BlazorHeroUser", null)
+                    b.HasOne("SecureDoc.Infrastructure.Models.Identity.SecureDocUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -518,13 +518,13 @@ namespace SecureDoc.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
-                    b.HasOne("SecureDoc.Infrastructure.Models.Identity.BlazorHeroRole", null)
+                    b.HasOne("SecureDoc.Infrastructure.Models.Identity.SecureDocRole", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SecureDoc.Infrastructure.Models.Identity.BlazorHeroUser", null)
+                    b.HasOne("SecureDoc.Infrastructure.Models.Identity.SecureDocUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -533,14 +533,14 @@ namespace SecureDoc.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("SecureDoc.Infrastructure.Models.Identity.BlazorHeroUser", null)
+                    b.HasOne("SecureDoc.Infrastructure.Models.Identity.SecureDocUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("SecureDoc.Infrastructure.Models.Identity.BlazorHeroUser", b =>
+            modelBuilder.Entity("SecureDoc.Infrastructure.Models.Identity.SecureDocUser", b =>
                 {
                     b.Navigation("ChatHistoryFromUsers");
 

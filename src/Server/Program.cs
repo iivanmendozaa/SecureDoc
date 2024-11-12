@@ -22,7 +22,7 @@ namespace SecureDoc.Server
 
                 try
                 {
-                    var context = services.GetRequiredService<BlazorHeroContext>();
+                    var context = services.GetRequiredService<SecureDocContext>();
 
                     if (context.Database.IsSqlServer())
                     {

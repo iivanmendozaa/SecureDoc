@@ -9,14 +9,14 @@ namespace SecureDoc.Infrastructure.Mappings
     {
         public RoleClaimProfile()
         {
-            CreateMap<RoleClaimResponse, BlazorHeroRoleClaim>()
-                .ForMember(nameof(BlazorHeroRoleClaim.ClaimType), opt => opt.MapFrom(c => c.Type))
-                .ForMember(nameof(BlazorHeroRoleClaim.ClaimValue), opt => opt.MapFrom(c => c.Value))
+            CreateMap<RoleClaimResponse, SecureDocRoleClaim>()
+                .ForMember(nameof(SecureDocRoleClaim.ClaimType), opt => opt.MapFrom(c => c.Type))
+                .ForMember(nameof(SecureDocRoleClaim.ClaimValue), opt => opt.MapFrom(c => c.Value))
                 .ReverseMap();
 
-            CreateMap<RoleClaimRequest, BlazorHeroRoleClaim>()
-                .ForMember(nameof(BlazorHeroRoleClaim.ClaimType), opt => opt.MapFrom(c => c.Type))
-                .ForMember(nameof(BlazorHeroRoleClaim.ClaimValue), opt => opt.MapFrom(c => c.Value))
+            CreateMap<RoleClaimRequest, SecureDocRoleClaim>()
+                .ForMember(nameof(SecureDocRoleClaim.ClaimType), opt => opt.MapFrom(c => c.Type))
+                .ForMember(nameof(SecureDocRoleClaim.ClaimValue), opt => opt.MapFrom(c => c.Value))
                 .ReverseMap();
         }
     }

@@ -9,7 +9,7 @@ namespace SecureDoc.Infrastructure.Mappings
     {
         public ChatHistoryProfile()
         {
-            CreateMap<ChatHistory<IChatUser>, ChatHistory<BlazorHeroUser>>().ReverseMap();
+            CreateMap<ChatHistory<IChatUser>, ChatHistory<SecureDocUser>>().ReverseMap();
         }
     }
 }

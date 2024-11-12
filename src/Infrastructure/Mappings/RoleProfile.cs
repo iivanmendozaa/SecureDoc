@@ -8,7 +8,7 @@ namespace SecureDoc.Infrastructure.Mappings
     {
         public RoleProfile()
         {
-            CreateMap<RoleResponse, BlazorHeroRole>().ReverseMap();
+            CreateMap<RoleResponse, SecureDocRole>().ReverseMap();
         }
     }
 }

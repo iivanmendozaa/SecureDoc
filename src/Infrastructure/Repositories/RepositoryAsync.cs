@@ -10,9 +10,9 @@ namespace SecureDoc.Infrastructure.Repositories
 {
     public class RepositoryAsync<T, TId> : IRepositoryAsync<T, TId> where T : AuditableEntity<TId>
     {
-        private readonly BlazorHeroContext _dbContext;
+        private readonly SecureDocContext _dbContext;
 
-        public RepositoryAsync(BlazorHeroContext dbContext)
+        public RepositoryAsync(SecureDocContext dbContext)
         {
             _dbContext = dbContext;
         }

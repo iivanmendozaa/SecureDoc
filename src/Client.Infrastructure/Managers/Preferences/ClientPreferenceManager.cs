@@ -73,9 +73,9 @@ namespace SecureDoc.Client.Infrastructure.Managers.Preferences
             var preference = await GetPreference() as ClientPreference;
             if (preference != null)
             {
-                if (preference.IsDarkMode == true) return BlazorHeroTheme.DarkTheme;
+                if (preference.IsDarkMode == true) return SecureDocTheme.DarkTheme;
             }
-            return BlazorHeroTheme.DefaultTheme;
+            return SecureDocTheme.DefaultTheme;
         }
         public async Task<bool> IsRTL()
         {

@@ -141,7 +141,7 @@
   <data name="Send" xml:space="preserve">
     <value>Kirim</value>
   </data>
-  <data name="Want to understand how Chat is implemented in BlazorHero ? Refer this" xml:space="preserve">
-    <value>Ingin tau bagaimana cara obrolan diimplementasi di BlazorHero ? Lihat</value>
+  <data name="Want to understand how Chat is implemented in SecureDoc ? Refer this" xml:space="preserve">
+    <value>Ingin tau bagaimana cara obrolan diimplementasi di SecureDoc ? Lihat</value>
   </data>
 </root>

@@ -25,7 +25,7 @@ namespace SecureDoc.Infrastructure.Services
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using var p = new ExcelPackage();
-            p.Workbook.Properties.Author = "BlazorHero";
+            p.Workbook.Properties.Author = "SecureDoc";
             p.Workbook.Worksheets.Add(_localizer["Audit Trails"]);
             var ws = p.Workbook.Worksheets[0];
             ws.Name = sheetName;

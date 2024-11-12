@@ -13,14 +13,14 @@ namespace SecureDoc.Infrastructure.Services.Identity
 {
     public class AccountService : IAccountService
     {
-        private readonly UserManager<BlazorHeroUser> _userManager;
-        private readonly SignInManager<BlazorHeroUser> _signInManager;
+        private readonly UserManager<SecureDocUser> _userManager;
+        private readonly SignInManager<SecureDocUser> _signInManager;
         private readonly IUploadService _uploadService;
         private readonly IStringLocalizer<AccountService> _localizer;
 
         public AccountService(
-            UserManager<BlazorHeroUser> userManager,
-            SignInManager<BlazorHeroUser> signInManager,
+            UserManager<SecureDocUser> userManager,
+            SignInManager<SecureDocUser> signInManager,
             IUploadService uploadService,
             IStringLocalizer<AccountService> localizer)
         {
